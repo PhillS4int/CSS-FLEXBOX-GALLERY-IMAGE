@@ -1,0 +1,59 @@
+/*Flexbox es un diseño unidimensional de CSS que se centra en el flujo del contenido,
+ofrece la habilidad de controlar la forma en la cual los elementos son espaceados y alineados
+dentro de un "contenedor".
+
+Para colocar un elemento que use "flexbox", hay que darle la propiedad de 'display' => flex
+
+Flexbox es como tener 2 ejes, el eje principal y el eje 'x', el eje principal está determinado por la propiedad 'flex-direction', si 'flex-direction' es puesto a 'row' o 'row-reverse' el eje pincipal es horizontal. Si 'flex-direction' es puesto a 'column' o 'column-reverse', el eje principal es vertical.
+
+'Justify-content' determina como los items dentro de un 'flex-container' son posicionados en el
+eje principal, afectando su posición y el espacio aldedor de los elementos.
+*/
+
+
+*{
+	box-sizing: border-box;
+}
+
+body{
+	margin: 0;
+	font-family: Cambria, "Hoefler Text", "Liberation Serif", Times, "Times New Roman", "serif";
+	background: #EBE7E7;
+}
+
+#gallery img{
+	width: 25%;
+	height: 300px;
+	object-fit: cover;/*Esta propieddad hace que las imágenes se ajusten al tamaño dado en el
+	contenedor manteniendo su relación de aspecto.*/
+	margin-top: 8px;
+	padding: 0 4px;
+	border-radius: 10px;
+}
+
+#gallery{
+	display: flex;/*Con esta propiedad se centra en el flujo del contenido*/
+	flex-direction: row;
+	flex-wrap: wrap;/*Esta propiedad hace que los elementos se desplienguen en varias filas o columnas dependiendo la dirección que se asigne.*/
+	justify-content: center;/*Todo el contenido se justifica hacia el centro (en este caso)*/
+	align-items: center;
+	padding: 0 4px;
+}
+
+.header{
+	text-align: center;
+	padding: 32px;
+	background: #E0DDDD;
+}
+
+@media(max-width: 800px){
+	#gallery img{
+		width: 50%;
+	}
+}
+
+@media(max-width: 600px){
+	#gallery img{
+		width: 100%;
+	}
+}
